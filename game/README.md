@@ -1,4 +1,4 @@
-## No More Nightmares
+## DDLC Mod Template
 
 These `.rpy` files are copies of important script files found in DDLC's `script.rpa` archive that are necessary to change for most basic modding projects.
 
