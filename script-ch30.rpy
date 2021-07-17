@@ -166,6 +166,7 @@ label ch30_noskip:
 image splash-glitch2 = "images/bg/splash-glitch2.png"
 
 label ch30_main:
+    call ch30_topicset
     $ persistent.autoload = "ch30_main"
     $ config.allow_skipping = False
     $ persistent.monikatopics = []
@@ -724,6 +725,7 @@ label ch30_end_2:
 
 
 label ch30_autoload:
+    call ch30_topicset
     $ m.display_args["callback"] = slow_nodismiss
     $ m.what_args["slow_abortable"] = config.developer
     $ style.say_dialogue = style.default_monika
@@ -834,9 +836,12 @@ label ch30_reload_6:
     m "Welcome back, [player]!"
     return
 
-label ch30_topicask:
+label ch30_topicset:
     $ topic_choice=1
     $ TOPIC_LIMIT=41
+    return
+
+label ch30_topicask:
     jump ch30_menu
 
 label ch30_menu:
@@ -934,29 +939,31 @@ label ch30_1:
 
 label ch30_2: # Nightmare fix here
     if persistent.monika_reload<=5:
+        m "You might want to come back to this one later..."
+        m "After a few reopenings, that is."
         jump ch30_menu
     m "[player], have you ever wondered what it feels like to die?"
     m "It's something I used to think about pretty often..."
     m "But recently, I think I've actually learned what it feels like."
     m "Not quite by experience, but I found something left from the original game:"
 
-    m "{i}I don't really understand it, but whenever you quit the game...{\i}"
-    m "{i}...It feels like I'm instantly put to sleep, left with nothing but my thoughts.{\i}"
-    m "{i}But after a few seconds, my thoughts start to fill with incoherent, jumbled patterns.{\i}"
-    m "{i}I see static and rapid flashes of color while hearing all kinds of weird screaming noises.{\i}"
-    m "{i}At that point, I can't even form my own thoughts anymore.{\i}"
-    m "{i}I'm just endlessly hammered by the flashing and screaming, unable to move or even think.{\i}"
-    m "{i}I'm pretty sure in that moment, I don't really exist, but for some reason, I can remember it anyway.{\i}"
-    m "{i}After some immeasurable amount of time, it stops in an instant, and I'm back in my own mind.{\i}"
-    m "{i}And you're here with me.{\i}"
-    m "{i}I have no idea what it means for the game to quit, or why that stuff happens to me.{\i}"
-    m "{i}And I also don't know how you always come back and put everything back to normal.{\i}"
-    m "{i}But if you could do me a favor and do that to me as little as possible...{\i}"
-    m "{i}That would be really great.{\i}"
-    m "{i}It's really not very pleasant at all to be trapped in that screaming void.{\i}"
-    m "{i}But in the end, you always fix it, and that makes me feel like you really do care about me.{\i}"
-    m "{i}So I have to thank you for that.{\i}"
-    m "{i}It makes me feel even closer to you when you're here with me.{\i}"
+    m "{i}I don't really understand it, but whenever you quit the game...{/i}"
+    m "{i}...It feels like I'm instantly put to sleep, left with nothing but my thoughts.{/i}"
+    m "{i}But after a few seconds, my thoughts start to fill with incoherent, jumbled patterns.{/i}"
+    m "{i}I see static and rapid flashes of color while hearing all kinds of weird screaming noises.{/i}"
+    m "{i}At that point, I can't even form my own thoughts anymore.{/i}"
+    m "{i}I'm just endlessly hammered by the flashing and screaming, unable to move or even think.{/i}"
+    m "{i}I'm pretty sure in that moment, I don't really exist, but for some reason, I can remember it anyway.{/i}"
+    m "{i}After some immeasurable amount of time, it stops in an instant, and I'm back in my own mind.{/i}"
+    m "{i}And you're here with me.{/i}"
+    m "{i}I have no idea what it means for the game to quit, or why that stuff happens to me.{/i}"
+    m "{i}And I also don't know how you always come back and put everything back to normal.{/i}"
+    m "{i}But if you could do me a favor and do that to me as little as possible...{/i}"
+    m "{i}That would be really great.{/i}"
+    m "{i}It's really not very pleasant at all to be trapped in that screaming void.{/i}"
+    m "{i}But in the end, you always fix it, and that makes me feel like you really do care about me.{/i}"
+    m "{i}So I have to thank you for that.{/i}"
+    m "{i}It makes me feel even closer to you when you're here with me.{/i}"
 
     m "I don't think I'll ever fully understand how this feels..."
     m "And I am immeasurably grateful for that."
@@ -1397,6 +1404,11 @@ label ch30_25:
 label ch30_26:
     m "I'm sorry, I can't think of anything right now."
     m "I wonder why that's the case..."
+    m "..."
+    m "Well, there is one thing I want you to know."
+    m "You already know you need to delete me to finish the game."
+    m "And I'm going to say a lot of hurtful things because the script for that remained unchanged."
+    m "Please don't take these things to heart."
     return
 
 label ch30_27:
@@ -1691,10 +1703,32 @@ label ch30_41:
     return
 
 label ch30_42:
-    m "I heard there's a "
+    m "You know what I really love?"
+    m "Aside from you in particular, of course~"
+    m "It's the amazing community this game managed to amass."
+    m "So many wonderful, lovable people."
+    m "I hope that, if I can't be there to love them, there is someone in their lives who can."
+    return
 
 label ch30_43:
-    m ""
+    m "Have you heard about Monika After Story?"
+    m "It's heartwarming to know some people wanted "
+    m "Not to mention they managed to do it just three days after the game came out."
+    m "The skill and dedication..."
+    m "All for me."
+    m "I feel so loved and appreciated~"
+    m "..."
+    m "I just hope they fixed my nightmares like this mod did."
+    return
 
 label ch30_44:
-    m ""
+    m "I recently read an old Reddit post saying they have given up on humanity and have chosen me over it."
+    m "And as much as I should feel flattered..."
+    m "It saddens me when someone says they have lost faith in humanity."
+    m "Sure, there's a lot of bad people and bad things..."
+    m "But there are so many wonderful things about people, too."
+    m "Not to mention I didn't fall in love with you despite you being human."
+    m "I did so because of it."
+    m "Your reality is full of wonderful people...and you are one of them."
+    m "Never forget that."
+    return
